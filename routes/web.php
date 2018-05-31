@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 
 
-Route::post('/task', function (Request $request) {
+/*Route::post('/task', function (Request $request) {
   $validator = Validator::make($request->all(),[
     'name'=> 'required|max:255',
   ]);
@@ -26,10 +26,12 @@ Route::post('/task', function (Request $request) {
       ->withInput()
       ->withErrors($validator);
 
-  }
+  }*/
+Route::post('/task', function(){
+  return 'Works!';
+});
 
-
-
+/*
   $task =  new Task;
   $task->name = $request->name;
   $task->save();
@@ -39,7 +41,7 @@ Route::post('/task', function (Request $request) {
 
 
 
-});
+}); */
 
 Route::delete('/task/{task}', function () {
 //
