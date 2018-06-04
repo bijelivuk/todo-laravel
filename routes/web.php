@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 
 
-/*Route::post('/task', function (Request $request) {
+Route::post('/task', function (Request $request) {
   $validator = Validator::make($request->all(),[
     'name'=> 'required|max:255',
   ]);
@@ -26,12 +26,9 @@ Route::get('/', function () {
       ->withInput()
       ->withErrors($validator);
 
-  }*/
-Route::post('/task', function(){
-  return 'Works!';
-});
+  }
 
-/*
+
   $task =  new Task;
   $task->name = $request->name;
   $task->save();
@@ -41,9 +38,17 @@ Route::post('/task', function(){
 
 
 
-}); */
+});
 
 Route::delete('/task/{task}', function () {
 //
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
